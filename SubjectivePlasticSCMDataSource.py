@@ -51,13 +51,15 @@ class SubjectivePlasticSCMDataSource(SubjectiveDataSource):
 
     # ------------------------------------------------------------------
     def get_icon(self):
-        """Return the SVG code for the Plastic SCM icon."""
-        return """
-<svg viewBox="0 0 24 24" fill="none" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="12" cy="12" r="10" fill="#556677"/>
-  <text x="50%" y="50%" font-size="5" fill="white" text-anchor="middle" alignment-baseline="middle">Plastic</text>
-</svg>
-        """
+        """Return SVG icon content, preferring a local icon.svg in the plugin folder."""
+        icon_path = os.path.join(os.path.dirname(__file__), 'icon.svg')
+        try:
+            if os.path.exists(icon_path):
+                with open(icon_path, 'r', encoding='utf-8') as f:
+                    return f.read()
+        except Exception:
+            pass
+        return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#556677"/><text x="12" y="13" font-size="5" fill="#fff" text-anchor="middle">PLS</text></svg>'
 
     def get_connection_data(self):
         """
