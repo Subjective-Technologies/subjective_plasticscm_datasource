@@ -1,4 +1,5 @@
 {
+  "description": "Ingests Plastic SCM repository/workspace content into local storage for source indexing and downstream automation.",
   "domainCategory": "Software Development",
   "subjectiveTechnologyElement": "DataSources",
   "publisher": "BrainBoost Ltd.",
@@ -9,7 +10,7 @@
     {
       "type": "splitList",
       "title": "Plastic SCM",
-      "text": "A Subjective data source for plastic scm.",
+      "text": "Ingests Plastic SCM repository/workspace content into local storage for source indexing and downstream automation.",
       "image": {
         "src": "/subjective_plasticscm_datasource/icon.svg",
         "alt": "Plastic SCM icon"
